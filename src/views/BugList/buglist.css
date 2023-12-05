@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+
+  .inner-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
