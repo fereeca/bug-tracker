@@ -1,11 +1,44 @@
 .layout {
+  flex-basis: 80%;
   display: flex;
   flex-direction: column;
-  width: 100vh;
+  width: 100%;
 
   .inner-layout {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+    .side {
+      flex-grow: 1;
+    }
+
+    .bug {
+      flex-basis: 80%;
+
+      .category-table {
+        width: 100%;
+      }
+    }
+
+    .bug td,
+    .bug th {
+      border: 1px solid #dde6ed;
+      padding: 20px;
+    }
+
+    .bug tr:nth-child(even) {
+      background-color: #dde6ed;
+    }
+
+    .bug tr:hover {
+      background-color: #ddd;
+    }
+
+    .bug th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      background-color: #9db2bf;
+      color: white;
+    }
   }
 }
