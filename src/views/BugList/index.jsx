@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
+
 import "./buglist.css";
+import { Btn } from "../Button";
 
 function BugList() {
   return (
@@ -10,12 +12,14 @@ function BugList() {
         <Navbar />
         <div className="inner-layout">
           <div className="side">
-            {" "}
             <Sidebar />
           </div>
           <div className="bug">
-            <div className="submit-bug">
-              <button>Submit Bug</button>
+            <div className="container">
+              <h1>Bug List</h1>
+              <div className="btn1">
+                <Btn />
+              </div>
             </div>
             <table className="category-table">
               <tr>

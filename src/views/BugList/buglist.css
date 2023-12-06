@@ -17,6 +17,12 @@
       .category-table {
         width: 100%;
       }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px;
+      }
     }
 
     .bug td,
