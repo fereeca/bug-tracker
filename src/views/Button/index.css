@@ -16,10 +16,12 @@ body.active-modal {
   right: 0;
   bottom: 0;
   position: fixed;
+  z-index: 2;
 }
 
 .overlay {
   background: rgba(49, 49, 49, 0.8);
+  z-index: 3;
 }
 .modal-content {
   position: absolute;
@@ -30,8 +32,9 @@ body.active-modal {
   background: #f1f1f1;
   padding: 14px 28px;
   border-radius: 3px;
-  max-width: 600px;
+  max-width: 900px;
   min-width: 300px;
+  z-index: 4;
 }
 
 .modal .close-modal {

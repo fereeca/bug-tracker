@@ -1,0 +1,13 @@
+.description {
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 0;
+  top: 10%;
+
+  .b {
+    padding: 10px;
+  }
+}
