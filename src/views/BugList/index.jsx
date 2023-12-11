@@ -9,12 +9,23 @@ import Bug from "../Bug";
 
 function BugList() {
   const [modal, setModal] = useState(false);
-  const [bugData, setBugData] = useState(getFromLocalStroage("bug"));
+  const [bugData, setBugData] = useState(getFromLocalStorage("bug"));
+  const [editBug, setEditBug] = useState(null);
 
   const onAddSuccess = (data) => {
     setBugData((prev) => {
       return [...prev, data];
     });
+
+    toggleModal();
+  };
+
+  const updateBug = (updatedBug) => {
+    const updatedBugs = bugData.map((bug) =>
+      bug.id === updatedBug.id ? updatedBug : bug
+    );
+    setBugData(updatedBugs);
+    setEditBug(null); // Reset edit bug after update
     toggleModal();
   };
 
@@ -33,6 +44,11 @@ function BugList() {
       });
       return filterdData;
     });
+  };
+
+  const onBugEdit = (bug) => {
+    setEditBug(bug);
+    toggleModal();
   };
 
   return (
@@ -55,26 +71,43 @@ function BugList() {
                       <button className="close-modal" onClick={toggleModal}>
                         &times;
                       </button>
-                      <BugReportingForm onAddSuccess={onAddSuccess} />
+                      <BugReportingForm
+                        onAddSuccess={onAddSuccess}
+                        bugToEdit={editBug}
+                        updateBug={updateBug}
+                      />
                     </div>
                   </div>
                 )}
               </div>
             </div>
-            <table className="category-table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Project</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bugData.map((bug) => (
-                  <Bug bug={bug} key={bug.id} onBugDelete={onBugDelete} />
-                ))}
-              </tbody>
-            </table>
+
+            {bugData.length > 0 ? (
+              <table className="category-table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Project</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bugData.map((bug) => (
+                    <Bug
+                      bug={bug}
+                      key={bug.id}
+                      onBugDelete={onBugDelete}
+                      onBugEdit={onBugEdit}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p>NO BUGS</p>
+            )}
           </div>
         </div>
       </div>
@@ -82,7 +115,7 @@ function BugList() {
   );
 }
 
-function getFromLocalStroage(key) {
+function getFromLocalStorage(key) {
   const localData = localStorage.getItem(key);
   if (!localData) {
     return [];
