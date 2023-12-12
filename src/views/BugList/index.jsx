@@ -6,12 +6,14 @@ import Button from "../Button";
 import "./buglist.css";
 import BugReportingForm from "../BugReportingForm";
 import Bug from "../Bug";
+import { useMemo } from "react";
 import Dropdown from "../Dropdown";
 
 function BugList() {
   const [modal, setModal] = useState(false);
   const [bugData, setBugData] = useState(getFromLocalStorage("bug"));
   const [editBug, setEditBug] = useState(null);
+  const [filter, setFilter] = useState();
 
   const onAddSuccess = (data) => {
     setBugData((prev) => {
@@ -52,6 +54,17 @@ function BugList() {
     toggleModal();
   };
 
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  function getFilteredList() {
+    if (!filter) {
+      return bugData;
+    }
+    return bugData.filter((newBug) => newBug.priority === filter);
+  }
+  var filteredList = useMemo(getFilteredList, [filter, bugData]);
   return (
     <>
       <div className="layout">
@@ -64,7 +77,10 @@ function BugList() {
             <div className="container">
               <h1>Bug List</h1>
               <div className="filter-btn">
-                <Dropdown dropdown_title={"Filter"} />
+                <Dropdown
+                  dropdown_title={"Filter"}
+                  onChange={handleFilterChange}
+                />
 
                 <div className="btn1">
                   <Button onClick={toggleModal} title="Report a bug" />
@@ -98,9 +114,9 @@ function BugList() {
                   <th>Action</th>
                 </tr>
               </thead>
-              {bugData.length > 0 ? (
+              {filteredList.length > 0 ? (
                 <tbody>
-                  {bugData.map((bug) => (
+                  {filteredList.map((bug) => (
                     <Bug
                       bug={bug}
                       key={bug.id}

@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+
 import "./index.css";
 
-const Dropdown = ({ value, onChange, dropdown_title }) => {
-  const handleChangeFilter = (event) => {
-    onChange(event.target.value);
-  };
+function Dropdown(props) {
+  // value,
+  const {
+    onChange,
+    dropdown_title,
+    value,
+    // filter,
+    // handleFilterChange,
+  } = props;
 
   return (
     <div className="priority">
       <label htmlFor="filter">{dropdown_title}</label>
-      <select name="filter" value={value} onChange={handleChangeFilter}>
+      <select name="filter" value={value} onChange={onChange}>
         <option value="">-- Please Select --</option>
         <option value="High">High</option>
         <option value="Medium">Medium</option>
@@ -17,6 +23,6 @@ const Dropdown = ({ value, onChange, dropdown_title }) => {
       </select>
     </div>
   );
-};
+}
 
 export default Dropdown;

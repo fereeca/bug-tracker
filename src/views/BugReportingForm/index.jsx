@@ -42,6 +42,9 @@ export default function BugReportingForm(props) {
       }
     }
   };
+  const handleFilterChange1 = (event) => {
+    setPriority(event.target.value);
+  };
 
   return (
     <>
@@ -81,7 +84,7 @@ export default function BugReportingForm(props) {
           <Dropdown
             value={priority}
             dropdown_title="Priority"
-            onChange={(selectedPriority) => setPriority(selectedPriority)}
+            onChange={handleFilterChange1}
           />
         </div>
         <Button
