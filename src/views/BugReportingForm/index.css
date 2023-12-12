@@ -28,4 +28,9 @@ form {
     padding: 20px;
     font-size: 30px;
   }
+
+  .status-dropdown {
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -6,6 +6,7 @@ import Button from "../Button";
 import "./buglist.css";
 import BugReportingForm from "../BugReportingForm";
 import Bug from "../Bug";
+import Dropdown from "../Dropdown";
 
 function BugList() {
   const [modal, setModal] = useState(false);
@@ -62,38 +63,42 @@ function BugList() {
           <div className="bug">
             <div className="container">
               <h1>Bug List</h1>
-              <div className="btn1">
-                <Button onClick={toggleModal} title="Report a bug" />
-                {modal && (
-                  <div className="modal">
-                    <div className="overlay"></div>
-                    <div className="modal-content">
-                      <button className="close-modal" onClick={toggleModal}>
-                        &times;
-                      </button>
-                      <BugReportingForm
-                        onAddSuccess={onAddSuccess}
-                        bugToEdit={editBug}
-                        updateBug={updateBug}
-                      />
+              <div className="filter-btn">
+                <Dropdown dropdown_title={"Filter"} />
+
+                <div className="btn1">
+                  <Button onClick={toggleModal} title="Report a bug" />
+                  {modal && (
+                    <div className="modal">
+                      <div className="overlay"></div>
+                      <div className="modal-content">
+                        <button className="close-modal" onClick={toggleModal}>
+                          &times;
+                        </button>
+                        <BugReportingForm
+                          onAddSuccess={onAddSuccess}
+                          bugToEdit={editBug}
+                          updateBug={updateBug}
+                        />
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
 
-            {bugData.length > 0 ? (
-              <table className="category-table">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Project</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Priority</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
+            <table className="category-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Project</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              {bugData.length > 0 ? (
                 <tbody>
                   {bugData.map((bug) => (
                     <Bug
@@ -104,10 +109,10 @@ function BugList() {
                     />
                   ))}
                 </tbody>
-              </table>
-            ) : (
-              <p>NO BUGS</p>
-            )}
+              ) : (
+                <p>NO BUGS</p>
+              )}
+            </table>
           </div>
         </div>
       </div>
