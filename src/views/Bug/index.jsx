@@ -15,7 +15,7 @@ function Bug(props) {
           <div className="delete-btn">
             <Button
               onClick={() => {
-                onBugDelete(bug.id);
+                if (window.confirm("Delete the item?")) onBugDelete(bug.id);
               }}
               title="Delete"
             />

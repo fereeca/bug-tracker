@@ -1,5 +1,6 @@
 .navbar {
-  background-color: #27374d;
   color: beige;
-  padding: 10px;
+  padding: 30px;
+  width: 80%;
+  margin: 0 auto;
 }

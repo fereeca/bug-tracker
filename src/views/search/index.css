@@ -1,0 +1,14 @@
+.search {
+  width: 900px;
+  border-radius: 70px;
+  border: 1px solid #b3acac;
+  padding: 10px;
+
+  .searchInputs input {
+    border: transparent;
+    padding: 10px;
+    width: 600px;
+    margin-left: 50px;
+    /* font-size: large; */
+  }
+}
