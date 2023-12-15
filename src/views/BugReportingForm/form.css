@@ -1,0 +1,110 @@
+.form-name {
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 25px;
+  color: #f15d38;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+
+  .title-p {
+    font-size: 22px;
+  }
+
+  .title {
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    display: flex;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 7px;
+  }
+
+  .project {
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 7px;
+  }
+
+  .des {
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 7px;
+  }
+
+  /* .add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* .add button {
+    padding: 20px;
+    font-size: 30px;
+  } */
+
+  .status-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+
+    .status {
+      font-size: 20px;
+      border: none;
+      padding: 10px;
+      outline: 0;
+      border-radius: 7px;
+      /* align-items: center;
+      display: flex; */
+    }
+  }
+
+  .bw {
+    display: flex;
+    justify-content: end;
+  }
+
+  .b {
+    display: flex;
+
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 20px 40px;
+
+    color: #ffffff;
+    background: #f15d38;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+      rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+    :hover {
+      background: #006e52;
+    }
+  }
+}
+
+/* label {
+  margin-bottom: 20px;
+} */

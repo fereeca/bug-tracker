@@ -38,7 +38,7 @@ import Button from "../Button";
 // }
 
 // export default Bug;
-import "./index.css";
+import "./bug.css";
 import editImg from "./assets/edit1.png";
 import deleteImg from "./assets/delete.png";
 

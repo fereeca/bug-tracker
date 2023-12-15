@@ -24,9 +24,10 @@
 
     width: 100%;
     /* margin: 0 auto; */
-    background-color: rgb(241, 234, 243);
+    background-color: rgb(243, 242, 242);
 
     padding: 35px;
+    font-size: 14px;
     /* flex-basis: 70%; */
 
     .container {
@@ -34,31 +35,26 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
-    }
 
-    .filter-btn {
-      display: flex;
-      gap: 3rem;
-    }
-
-    .btn {
-      display: inline-block;
-      outline: 0;
-      cursor: pointer;
-      /* text-align: center; */
-      border: 0;
-      padding: 20px;
-      min-height: 36px;
-      min-width: 36px;
-      color: #ffffff;
-      background: #ca0568;
-      border-radius: 4px;
-      font-weight: 900;
-      font-size: 14px;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
-        rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
-      :hover {
-        background: #006e52;
+      .btn {
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        /* text-align: center; */
+        border: 0;
+        padding: 20px;
+        min-height: 36px;
+        min-width: 36px;
+        color: #ffffff;
+        background: #f73a3a;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+          rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+        :hover {
+          background: #006e52;
+        }
       }
     }
     .category-table {
@@ -68,31 +64,29 @@
     .category-table td {
       padding-top: 18px;
       padding-bottom: 18px;
-      padding-left: 20px;
-      padding-right: 0px;
+      /* padding-left: 20px; */
+
       border-bottom: 1.5px solid rgb(212, 206, 206);
+      text-align: left;
     }
 
     /* .category-table .ii {
       border-bottom: 20px solid black;
     } */
 
-    .category-table tr:nth-child(even) {
-      /* background-color: #dde6ed; */
-    }
-
     .category-table tr:hover {
       background-color: #ddd;
+      /* transform: scale(1.1); */
     }
 
     .category-table th {
       padding-top: 12px;
       padding-bottom: 12px;
-      padding-left: 10px;
+      text-align: left;
+      font-size: 20px;
 
       /* background-color: #9db2bf; */
       color: rgb(0, 0, 0);
-      text-align: left;
     }
   }
 }

@@ -3,6 +3,7 @@
   border: 1px solid #b3acac;
   padding: 10px;
   background-color: white;
+  outline: none;
 
   .searchInputs {
     display: flex;

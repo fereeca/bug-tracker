@@ -6,7 +6,7 @@ function Dropdown(props) {
   // value,
   const {
     onChange,
-    dropdown_title,
+    // dropdown_title,
     value,
     // filter,
     // handleFilterChange,
@@ -14,9 +14,14 @@ function Dropdown(props) {
 
   return (
     <div className="priority">
-      <label htmlFor="filter">{dropdown_title}</label>
-      <select name="filter" value={value} onChange={onChange}>
-        <option value="">-- Please Select --</option>
+      {/* <label htmlFor="filter">{dropdown_title}</label> */}
+      <select
+        name="filter"
+        value={value}
+        onChange={onChange}
+        className="filter"
+      >
+        <option value="">Priority</option>
         <option value="High">High</option>
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>

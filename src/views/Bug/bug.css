@@ -56,6 +56,8 @@ td .action {
     margin-bottom: 10px;
     margin-left: 50px;
     cursor: pointer;
+    /* display: flex;
+    justify-content: center; */
 
     .btn-edit {
       outline: 0;
@@ -80,31 +82,40 @@ td .action {
 }
 
 .high-cell .priority-div {
-  background-color: #f34e4e;
+  background-color: #f06565;
   padding: 10px;
   border-radius: 7px;
-  color: rgb(129, 19, 19);
+  color: rgb(255, 255, 255);
+
   text-align: center;
+
   font-weight: 600;
   width: 80px;
 }
 
 .low-cell .priority-div {
-  background-color: #42b84c;
+  background-color: #64e26e;
   padding: 10px;
   border-radius: 7px;
-  color: rgb(69, 114, 32);
-  text-align: center;
+  color: rgb(255, 255, 255);
+
   font-weight: 600;
   width: 80px;
 }
 
 .medium-cell .priority-div {
-  background-color: #df842f;
+  background-color: #fda552;
   padding: 10px;
   border-radius: 7px;
-  color: rgb(167, 78, 6);
-  text-align: center;
+  color: rgb(219, 219, 219);
+
   font-weight: 600;
   width: 80px;
+}
+
+.high-cell,
+.medium-cell,
+.low-cell {
+  display: flex;
+  justify-content: left;
 }

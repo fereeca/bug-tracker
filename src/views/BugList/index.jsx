@@ -113,31 +113,30 @@ function BugList() {
 
             <div className="filter-btn">
               <Dropdown
-                dropdown_title={"Filter"}
+                // dropdown_title={"Priority"}
                 onChange={handleFilterChange}
               />
-
-              <Button
-                onClick={toggleModal}
-                title="Report a bug"
-                className="btn"
-              />
-              {modal && (
-                <div className="modal">
-                  <div className="overlay"></div>
-                  <div className="modal-content">
-                    <button className="close-modal" onClick={toggleModal}>
-                      &times;
-                    </button>
-                    <BugReportingForm
-                      onAddSuccess={onAddSuccess}
-                      bugToEdit={editBug}
-                      updateBug={updateBug}
-                    />
-                  </div>
-                </div>
-              )}
             </div>
+            <Button
+              onClick={toggleModal}
+              title="Report a bug"
+              className="btn"
+            />
+            {modal && (
+              <div className="modal">
+                <div className="overlay"></div>
+                <div className="modal-content">
+                  <button className="close-modal" onClick={toggleModal}>
+                    &times;
+                  </button>
+                  <BugReportingForm
+                    onAddSuccess={onAddSuccess}
+                    bugToEdit={editBug}
+                    updateBug={updateBug}
+                  />
+                </div>
+              </div>
+            )}
           </div>
 
           <table className="category-table">

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import "./index.css";
+import "./form.css";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 
@@ -61,38 +61,55 @@ export default function BugReportingForm(props) {
 
   return (
     <>
+      <div className="form-name">
+        <h2>Bug Reporting Form</h2>
+      </div>
       <form>
-        <input
-          type="text"
-          value={title}
-          className="title"
-          placeholder="Title"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          value={project}
-          className="project"
-          placeholder="Project"
-          onChange={(e) => setProject(e.target.value)}
-        />
-        <textarea
-          name="Description"
-          placeholder="Description"
-          id="des"
-          cols="90"
-          rows="20"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <div className="status-dropdown">
+        <label htmlFor="title">
+          <div className="title-p">Bug Title: </div>
           <input
             type="text"
-            value={status}
-            className="status"
-            placeholder="Status"
-            onChange={(e) => setStatus(e.target.value)}
+            value={title}
+            className="title"
+            placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
           />
+        </label>
+
+        <label htmlFor="project">
+          <div className="title-p">Project Title: </div>
+          <input
+            type="text"
+            value={project}
+            className="project"
+            placeholder="Project"
+            onChange={(e) => setProject(e.target.value)}
+          />
+        </label>
+        <label htmlFor="des">
+          <div className="title-p">Project Description: </div>
+          <textarea
+            className="des"
+            name="Description"
+            placeholder="Description"
+            id="des"
+            cols="50"
+            rows="5"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
+        <div className="status-dropdown">
+          <label htmlFor="status">
+            <div className="title-p"> Status: </div>
+            <input
+              type="text"
+              value={status}
+              className="status"
+              placeholder="Status"
+              onChange={(e) => setStatus(e.target.value)}
+            />
+          </label>
 
           <Dropdown
             value={priority}
@@ -100,10 +117,13 @@ export default function BugReportingForm(props) {
             onChange={handleFilterChange1}
           />
         </div>
-        <Button
-          onClick={addOrUpdateBug}
-          title={bugToEdit ? "Update" : "Save"}
-        />
+        <div className="bw">
+          <Button
+            onClick={addOrUpdateBug}
+            title={bugToEdit ? "Update" : "Save"}
+            className="b"
+          />
+        </div>
       </form>
     </>
   );
