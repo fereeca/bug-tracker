@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./index.css";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
@@ -22,26 +22,39 @@ export default function BugReportingForm(props) {
     }
   }, [bugToEdit]);
 
-  const addOrUpdateBug = (event) => {
-    event.preventDefault();
+  const addOrUpdateBug = useCallback(
+    (event) => {
+      event.preventDefault();
 
-    if (title && project && description && status && priority) {
-      const newBug = {
-        id: bugToEdit ? bugToEdit.id : Date.now(),
-        title: title,
-        project: project,
-        description: description,
-        status: status,
-        priority: priority,
-      };
+      if (title && project && description && status && priority) {
+        const newBug = {
+          id: bugToEdit ? bugToEdit.id : Date.now(),
+          title: title,
+          project: project,
+          description: description,
+          status: status,
+          priority: priority,
+        };
 
-      if (bugToEdit) {
-        updateBug(newBug);
-      } else {
-        onAddSuccess(newBug);
+        if (bugToEdit) {
+          updateBug(newBug);
+        } else {
+          onAddSuccess(newBug);
+        }
       }
-    }
-  };
+    },
+    [
+      title,
+      project,
+      description,
+      status,
+      priority,
+      bugToEdit,
+      updateBug,
+      onAddSuccess,
+    ]
+  );
+
   const handleFilterChange1 = (event) => {
     setPriority(event.target.value);
   };

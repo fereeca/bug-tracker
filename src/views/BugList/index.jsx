@@ -1,7 +1,7 @@
 // import React from "react";
 import Navbar from "../Navbar";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Button from "../Button";
 import "./buglist.css";
 import BugReportingForm from "../BugReportingForm";
@@ -26,54 +26,64 @@ function BugList() {
     toggleModal();
   };
 
-  const updateBug = (updatedBug) => {
+  const updateBug = useCallback((updatedBug) => {
     const updatedBugs = bugData.map((bug) =>
       bug.id === updatedBug.id ? updatedBug : bug
     );
+
     setBugData(updatedBugs);
-    setEditBug(null); // Reset edit bug after update
+    setEditBug(null);
     toggleModal();
-  };
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("bug", JSON.stringify(bugData));
   }, [bugData]);
 
-  const toggleModal = () => {
+  const toggleModal = useCallback(() => {
     setModal((prev) => !prev);
-  };
+  }, []);
 
-  const onBugDelete = (id) => {
-    setBugData((prev) => {
-      const filterdData = prev.filter((bug) => {
-        return bug.id !== Number(id);
+  const onBugDelete = useCallback(
+    (id) => {
+      setBugData((prev) => {
+        const filterdData = prev.filter((bug) => {
+          return bug.id !== Number(id);
+        });
+        return filterdData;
       });
-      return filterdData;
-    });
-  };
+    },
+    [setBugData]
+  );
 
-  const onBugEdit = (bug) => {
-    setEditBug(bug);
-    toggleModal();
-  };
+  const onBugEdit = useCallback(
+    (bug) => {
+      setEditBug(bug);
+      toggleModal();
+    },
+    [setEditBug, toggleModal]
+  );
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
   };
 
-  function getFilteredList() {
-    if (!filter) {
-      return bugData;
+  const filteredList = useMemo(() => {
+    function getFilteredList() {
+      if (!filter) {
+        return bugData;
+      }
+      return bugData.filter((newBug) => newBug.priority === filter);
     }
-    return bugData.filter((newBug) => newBug.priority === filter);
-  }
-  var filteredList = useMemo(getFilteredList, [filter, bugData]);
+
+    return getFilteredList();
+  }, [filter, bugData]);
 
   const handleSearch = (event) => {
     setSearchData(event.target.value);
   };
 
-  function getSearchBar() {
+  const searchbar = useMemo(() => {
     if (!searchData) {
       return bugData;
     }
@@ -83,8 +93,7 @@ function BugList() {
         newBug.project.includes(searchData) ||
         newBug.description.includes(searchData)
     );
-  }
-  var searchbar = useMemo(getSearchBar, [searchData, bugData]);
+  }, [searchData, bugData]);
 
   const combinedData = filteredList.filter((bug) =>
     searchbar.some((searchedBug) => searchedBug.id === bug.id)
@@ -100,7 +109,7 @@ function BugList() {
         <div className="bug">
           <div className="container">
             <h1>Bug List</h1>
-            <Search placeholder="search" onChange={handleSearch} />
+            <Search placeholder="search Bugs" onChange={handleSearch} />
 
             <div className="filter-btn">
               <Dropdown
@@ -108,24 +117,26 @@ function BugList() {
                 onChange={handleFilterChange}
               />
 
-              <div className="btn1">
-                <Button onClick={toggleModal} title="Report a bug" />
-                {modal && (
-                  <div className="modal">
-                    <div className="overlay"></div>
-                    <div className="modal-content">
-                      <button className="close-modal" onClick={toggleModal}>
-                        &times;
-                      </button>
-                      <BugReportingForm
-                        onAddSuccess={onAddSuccess}
-                        bugToEdit={editBug}
-                        updateBug={updateBug}
-                      />
-                    </div>
+              <Button
+                onClick={toggleModal}
+                title="Report a bug"
+                className="btn"
+              />
+              {modal && (
+                <div className="modal">
+                  <div className="overlay"></div>
+                  <div className="modal-content">
+                    <button className="close-modal" onClick={toggleModal}>
+                      &times;
+                    </button>
+                    <BugReportingForm
+                      onAddSuccess={onAddSuccess}
+                      bugToEdit={editBug}
+                      updateBug={updateBug}
+                    />
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
 

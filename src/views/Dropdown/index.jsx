@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./index.css";
+import "./dropdown.css";
 
 function Dropdown(props) {
   // value,

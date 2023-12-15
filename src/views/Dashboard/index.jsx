@@ -1,10 +1,13 @@
 import React from "react";
 import Navbar from "../Navbar";
+import "./dashboard.css";
 
 function Dashboard() {
   return (
     <>
-      <Navbar />
+      <div className="nav-dash">
+        <Navbar />
+      </div>
     </>
   );
 }

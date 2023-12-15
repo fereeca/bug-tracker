@@ -1,5 +1,6 @@
 import React from "react";
-import "./index.css";
+import "./search.css";
+import searchImg from "./assets/search_104498.png";
 
 function Search(props) {
   const { onChange, placeholder } = props;
@@ -8,8 +9,15 @@ function Search(props) {
     <>
       <div className="search">
         <div className="searchInputs">
-          <input type="text" placeholder={placeholder} onChange={onChange} />
-          <div className="searchIcon"></div>
+          <div className="searchIcon">
+            <img src={searchImg} alt="Search Icon" width="20px" />
+          </div>
+          <input
+            type="text"
+            placeholder={placeholder}
+            onChange={onChange}
+            className="search-input"
+          />
         </div>
         <div className="dataResult"></div>
       </div>

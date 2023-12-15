@@ -1,0 +1,26 @@
+.search {
+  border-radius: 70px;
+  border: 1px solid #b3acac;
+  padding: 10px;
+  background-color: white;
+
+  .searchInputs {
+    display: flex;
+    gap: 2px;
+
+    .search-input {
+      /* background-color: transparent;
+      border: 1px solid #ccc; */
+      padding: 10px;
+      width: 900px;
+      border: none;
+      outline: none;
+      /* margin-left: 50px; */
+      /* font-size: large; */
+    }
+  }
+  .searchIcon {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,23 +1,38 @@
 .layout {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  width: 100%;
+
+  /* margin: 0 auto; */
 
   .nav {
-    width: 100%;
-    background-color: #27374d;
+    width: 20%;
+    /* margin: 0 auto; */
+    /* padding: 5px; */
+    /* background-color: #030405; */
+    /* align-items: center; */
+    /* display: flex;
+    justify-content: space-between; */
+    /* flex-grow: 1; */
   }
 
   .bug {
+    /* width: 90%; */
+    /* width: 80%; */
     display: flex;
     flex-direction: column;
-    margin: 30px;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
+
+    width: 100%;
+    /* margin: 0 auto; */
+    background-color: rgb(241, 234, 243);
+
+    padding: 35px;
+    /* flex-basis: 70%; */
 
     .container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
     }
 
@@ -26,14 +41,44 @@
       gap: 3rem;
     }
 
+    .btn {
+      display: inline-block;
+      outline: 0;
+      cursor: pointer;
+      /* text-align: center; */
+      border: 0;
+      padding: 20px;
+      min-height: 36px;
+      min-width: 36px;
+      color: #ffffff;
+      background: #ca0568;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+        rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+      :hover {
+        background: #006e52;
+      }
+    }
+    .category-table {
+      border-collapse: collapse;
+    }
+
     .category-table td {
       padding-top: 18px;
       padding-bottom: 18px;
       padding-left: 20px;
+      padding-right: 0px;
+      border-bottom: 1.5px solid rgb(212, 206, 206);
     }
 
+    /* .category-table .ii {
+      border-bottom: 20px solid black;
+    } */
+
     .category-table tr:nth-child(even) {
-      background-color: #dde6ed;
+      /* background-color: #dde6ed; */
     }
 
     .category-table tr:hover {
@@ -43,9 +88,11 @@
     .category-table th {
       padding-top: 12px;
       padding-bottom: 12px;
+      padding-left: 10px;
 
-      background-color: #9db2bf;
-      color: white;
+      /* background-color: #9db2bf; */
+      color: rgb(0, 0, 0);
+      text-align: left;
     }
   }
 }
