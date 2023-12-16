@@ -59,11 +59,19 @@ export default function BugReportingForm(props) {
     setPriority(event.target.value);
   };
 
+  const handleFilterChange2 = (event) => {
+    setStatus(event.target.value);
+  };
+
   return (
     <>
       <div className="form-name">
-        <h2>Bug Reporting Form</h2>
+        <div className="logo">
+          <i className="fas fa-bug"></i>
+          <h2>Bug Reporting Form</h2>
+        </div>
       </div>
+
       <form>
         <label htmlFor="title">
           <div className="title-p">Bug Title: </div>
@@ -100,7 +108,18 @@ export default function BugReportingForm(props) {
           />
         </label>
         <div className="status-dropdown">
-          <label htmlFor="status">
+          <Dropdown
+            value={status}
+            title="Status"
+            onChange={handleFilterChange2}
+            option1="Open"
+            option2="In Progress"
+            option3="Failed"
+            opt1="Open"
+            opt2="In Progress"
+            opt3="Failed"
+          />
+          {/* <label htmlFor="status">
             <div className="title-p"> Status: </div>
             <input
               type="text"
@@ -109,12 +128,18 @@ export default function BugReportingForm(props) {
               placeholder="Status"
               onChange={(e) => setStatus(e.target.value)}
             />
-          </label>
+          </label> */}
 
           <Dropdown
             value={priority}
-            dropdown_title="Priority"
+            title="Priority"
             onChange={handleFilterChange1}
+            option1="High"
+            option2="Medium"
+            option3="Low"
+            opt1="High"
+            opt2="Medium"
+            opt3="Low"
           />
         </div>
         <div className="bw">

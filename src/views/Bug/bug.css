@@ -4,81 +4,37 @@
 
 td .action {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* flex-direction: column; */
+  gap: 2rem;
+}
 
-  width: 50px;
+.table-icons {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1.5rem;
+}
 
-  .img-delete {
-    display: flex;
+.fa-trash-alt {
+  font-size: 16px;
+  /* color: rgb(52, 52, 52); */
+  color: rgb(254, 44, 44);
+  transition: transform 200ms;
+  cursor: pointer;
+}
 
-    /* align-items: center; */
+.fa-pencil-alt {
+  margin-right: 20px;
+  font-size: 16px;
+  color: rgb(52, 52, 52);
+  transition: transform 200ms;
+  cursor: pointer;
+  color: rgb(33, 36, 94);
+}
 
-    .btn-delete {
-      display: flex;
-      outline: 0;
-      cursor: pointer;
-      align-items: center;
-      /* text-align: center; */
-      border-radius: 6px;
-      padding: 5px 35px;
-      gap: 10px;
-
-      /* padding-left: 40px; */
-
-      /* min-height: 36px;
-      min-width: 36px; */
-      color: #ffffff;
-      /* background: #f34e4e; */
-      opacity: 1px;
-
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 30px;
-
-      /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
-        rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset; */
-    }
-  }
-  .img-delete:hover {
-    /* background-color: rgb(110, 103, 103);
-    opacity: 1px; */
-    width: 90px;
-    transform: scale(1.1);
-  }
-
-  .img-edit {
-    display: flex;
-    gap: 7px;
-    align-items: center;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-left: 50px;
-    cursor: pointer;
-    /* display: flex;
-    justify-content: center; */
-
-    .btn-edit {
-      outline: 0;
-      cursor: pointer;
-      /* text-align: center; */
-      border: transparent;
-      /* padding: 20px 35px; */
-
-      color: #000000;
-      background: none;
-
-      font-weight: 400;
-      font-size: 20px;
-    }
-  }
-  .img-edit:hover {
-    /* background-color: rgb(110, 103, 103);
-    opacity: 1px; */
-    width: 90px;
-    transform: scale(1.4);
-  }
+.fa-trash-alt:hover {
+  transform: scale(1.2);
+}
+.fa-pencil-alt :hover {
+  transform: scale(1.4);
 }
 
 .high-cell .priority-div {
@@ -86,6 +42,7 @@ td .action {
   padding: 10px;
   border-radius: 7px;
   color: rgb(255, 255, 255);
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 
   text-align: center;
 
@@ -98,6 +55,8 @@ td .action {
   padding: 10px;
   border-radius: 7px;
   color: rgb(255, 255, 255);
+  box-shadow: 0 4px 15px 0 rgba(24, 173, 44, 0.75);
+  text-align: center;
 
   font-weight: 600;
   width: 80px;
@@ -107,7 +66,9 @@ td .action {
   background-color: #fda552;
   padding: 10px;
   border-radius: 7px;
-  color: rgb(219, 219, 219);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 4px 15px 0 rgba(247, 115, 55, 0.75);
+  text-align: center;
 
   font-weight: 600;
   width: 80px;

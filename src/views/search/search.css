@@ -1,9 +1,9 @@
 .search {
   border-radius: 70px;
-  border: 1px solid #b3acac;
+  /* border: 1px solid #b3acac; */
   padding: 10px;
   background-color: white;
-  outline: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   .searchInputs {
     display: flex;

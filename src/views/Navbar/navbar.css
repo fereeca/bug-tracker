@@ -3,7 +3,7 @@
   /* padding: 5px; */
   width: 100%;
   margin: 0 auto;
-  background-color: rgb(92, 91, 91);
+  background: rgb(52, 143, 108);
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -11,20 +11,22 @@
 
   .logo {
     padding: 2rem 0;
-    background-color: rgb(21, 22, 22);
+    background-color: rgb(40, 117, 88);
+
     display: flex;
     justify-content: center;
-    color: rgb(247, 247, 247);
+    color: white;
     align-items: center;
     gap: 15px;
 
-    .fas {
+    .fa-bug {
       font-size: 28px;
-      color: rgb(248, 30, 30);
+      color: rgb(253, 249, 243);
     }
   }
 
   .nav-btns {
+    padding-left: 2rem;
     /* padding-left: 1rem; */
     display: flex;
     flex-direction: column;
@@ -32,7 +34,7 @@
     display: flex;
     /* color: rgb(182, 20, 20); */
     /* justify-content: center; */
-    height: 86vh;
+    height: 82vh;
     margin-top: 20px;
     /* width: 25%; */
 
@@ -42,25 +44,32 @@
       color: white;
     } */
 
-    .active {
-      background-color: rgb(221, 148, 83);
-      color: white;
-      margin-left: 2rem;
-      font-weight: bolder;
-      border-radius: 12px 0 0 12px;
-    }
-
     .b {
-      margin-left: 2rem;
+      /* margin-left: 2rem; */
       font-weight: 500;
       /* color: rgb(133, 96, 144); */
-      color: #000000;
+      color: white;
       /* padding: 20px; */
       padding: 1.2rem;
       border: none;
-
+      padding-left: 2rem;
       font-size: 18px;
       cursor: pointer;
+    }
+    .active {
+      position: relative;
+      background-color: rgb(253, 249, 243);
+      /* box-shadow: rgba(255, 145, 0, 0.856) 0px 8px 24px; */
+
+      color: rgb(214, 209, 209);
+      /* margin-left: 2rem; */
+      font-weight: bolder;
+      border-radius: 12px 0 0 12px;
+      padding-left: 0;
+
+      .b {
+        color: rgb(88, 88, 88);
+      }
     }
   }
 

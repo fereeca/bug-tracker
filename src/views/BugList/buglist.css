@@ -24,7 +24,7 @@
 
     width: 100%;
     /* margin: 0 auto; */
-    background-color: rgb(243, 242, 242);
+    background-color: rgb(253, 249, 243);
 
     padding: 35px;
     font-size: 14px;
@@ -36,6 +36,10 @@
       align-items: center;
       margin-bottom: 20px;
 
+      .title-bug {
+        color: #757472;
+      }
+
       .btn {
         display: inline-block;
         outline: 0;
@@ -46,19 +50,37 @@
         min-height: 36px;
         min-width: 36px;
         color: #ffffff;
-        background: #f73a3a;
+        background-image: linear-gradient(
+          to right,
+          #eb3941,
+          #f15e64,
+          #e14e53,
+          #e2373f
+        );
+        box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
         border-radius: 12px;
         font-weight: 600;
         font-size: 16px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
-          rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
         :hover {
           background: #006e52;
         }
       }
     }
+    .category-table1 {
+      margin-top: 30px;
+      width: 100%;
+      padding: 50px;
+      max-height: 80vh;
+      background-color: white;
+      border-radius: 12px;
+      overflow-y: scroll;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
     .category-table {
       border-collapse: collapse;
+      width: 100%;
+      padding: 20px;
     }
 
     .category-table td {

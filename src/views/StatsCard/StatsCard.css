@@ -1,0 +1,37 @@
+.stats-card {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  .bug-card {
+    padding: 50px;
+    padding-right: 120px;
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+
+    .num {
+      font-size: 60px;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  }
+  .green {
+    background-color: #64e26e;
+
+    box-shadow: 0 4px 15px 0 rgba(24, 173, 44, 0.75);
+  }
+
+  .yellow {
+    background-color: #fda552;
+
+    box-shadow: 0 4px 15px 0 rgba(247, 115, 55, 0.75);
+  }
+
+  .red {
+    background-color: #f06565;
+
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  }
+}

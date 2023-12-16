@@ -108,13 +108,19 @@ function BugList() {
 
         <div className="bug">
           <div className="container">
-            <h1>Bug List</h1>
+            <h1 className="title-bug">Bug List</h1>
             <Search placeholder="search Bugs" onChange={handleSearch} />
 
             <div className="filter-btn">
               <Dropdown
-                // dropdown_title={"Priority"}
+                title={"Priority"}
                 onChange={handleFilterChange}
+                option1="High"
+                option2="Medium"
+                option3="Low"
+                opt1="High"
+                opt2="Medium"
+                opt3="Low"
               />
             </div>
             <Button
@@ -124,7 +130,7 @@ function BugList() {
             />
             {modal && (
               <div className="modal">
-                <div className="overlay"></div>
+                <div className="overlay" onClick={toggleModal}></div>
                 <div className="modal-content">
                   <button className="close-modal" onClick={toggleModal}>
                     &times;
@@ -139,32 +145,34 @@ function BugList() {
             )}
           </div>
 
-          <table className="category-table">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Project</th>
-                <th>Description</th>
-                <th>Status</th>
-                <th>Priority</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            {combinedData.length > 0 ? (
-              <tbody>
-                {combinedData.map((bug) => (
-                  <Bug
-                    bug={bug}
-                    key={bug.id}
-                    onBugDelete={onBugDelete}
-                    onBugEdit={onBugEdit}
-                  />
-                ))}
-              </tbody>
-            ) : (
-              <p>NO BUGS</p>
-            )}
-          </table>
+          <div className="category-table1">
+            <table className="category-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Project</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              {combinedData.length > 0 ? (
+                <tbody>
+                  {combinedData.map((bug) => (
+                    <Bug
+                      bug={bug}
+                      key={bug.id}
+                      onBugDelete={onBugDelete}
+                      onBugEdit={onBugEdit}
+                    />
+                  ))}
+                </tbody>
+              ) : (
+                <p>NO BUGS</p>
+              )}
+            </table>
+          </div>
         </div>
       </div>
     </>
