@@ -1,37 +1,47 @@
 .stats-card {
   display: flex;
+  gap: 2rem;
+  padding-left: 30px;
+  height: 140px;
+
+  width: 1010px;
   justify-content: space-evenly;
-  width: 100%;
+  padding-left: 20px;
+  align-items: center;
 
   .bug-card {
-    padding: 50px;
-    padding-right: 120px;
-    border-radius: 12px;
-    color: rgb(255, 255, 255);
+    padding: 30px;
+
+    border-radius: 24px;
+    color: rgb(117, 111, 111);
+    background-color: white;
+    width: 80%;
 
     .num {
-      font-size: 60px;
+      font-size: 30px;
+      color: black;
+      padding-bottom: 10px;
+    }
+    .card-title {
+      color: black;
     }
 
     .icon {
-      font-size: 30px;
+      font-size: 20px;
     }
   }
   .green {
-    background-color: #64e26e;
-
-    box-shadow: 0 4px 15px 0 rgba(24, 173, 44, 0.75);
+    background-color: rgb(193, 230, 193);
+    border: 2px solid rgb(159, 223, 159);
   }
 
   .yellow {
-    background-color: #fda552;
-
-    box-shadow: 0 4px 15px 0 rgba(247, 115, 55, 0.75);
+    background-color: rgb(244, 235, 215);
+    border: 2px solid rgb(252, 225, 167);
   }
 
   .red {
-    background-color: #f06565;
-
-    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+    background-color: rgb(243, 193, 177);
+    border: 2px solid rgb(245, 175, 152);
   }
 }

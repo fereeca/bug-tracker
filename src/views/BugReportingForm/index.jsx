@@ -3,6 +3,14 @@ import "./form.css";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 
+const initalError = {
+  title: "",
+  project: "",
+  description: "",
+  status: "",
+  priority: "",
+};
+
 export default function BugReportingForm(props) {
   const { onAddSuccess, bugToEdit, updateBug } = props;
   const [title, setTitle] = useState("");
@@ -10,6 +18,7 @@ export default function BugReportingForm(props) {
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [priority, setPriority] = useState("");
+  const [errorMessage, setErrorMessage] = useState(initalError);
 
   useEffect(() => {
     if (bugToEdit) {
@@ -22,45 +31,65 @@ export default function BugReportingForm(props) {
     }
   }, [bugToEdit]);
 
-  const addOrUpdateBug = useCallback(
-    (event) => {
-      event.preventDefault();
+  const addOrUpdateBug = (event) => {
+    event.preventDefault();
 
-      if (title && project && description && status && priority) {
-        const newBug = {
-          id: bugToEdit ? bugToEdit.id : Date.now(),
-          title: title,
-          project: project,
-          description: description,
-          status: status,
-          priority: priority,
-        };
+    if (!title) {
+      setErrorMessage((prev) => {
+        return { ...prev, title: "Please provide a title" };
+      });
+    }
+    if (!project) {
+      setErrorMessage((prev) => {
+        return { ...prev, project: "Please provide a project" };
+      });
+    }
+    if (!description) {
+      setErrorMessage((prev) => {
+        return { ...prev, description: "Please provide a description" };
+      });
+    }
+    if (!status) {
+      setErrorMessage((prev) => {
+        return { ...prev, status: "Please provide a status" };
+      });
+    }
+    if (!priority) {
+      setErrorMessage((prev) => {
+        return { ...prev, priority: "Please provide a priority" };
+      });
+    }
 
-        if (bugToEdit) {
-          updateBug(newBug);
-        } else {
-          onAddSuccess(newBug);
-        }
+    if (title && project && description && status && priority) {
+      const newBug = {
+        id: bugToEdit ? bugToEdit.id : Date.now(),
+        title: title,
+        project: project,
+        description: description,
+        status: status,
+        priority: priority,
+      };
+
+      if (bugToEdit) {
+        updateBug(newBug);
+      } else {
+        onAddSuccess(newBug);
       }
-    },
-    [
-      title,
-      project,
-      description,
-      status,
-      priority,
-      bugToEdit,
-      updateBug,
-      onAddSuccess,
-    ]
-  );
+    }
+  };
 
   const handleFilterChange1 = (event) => {
     setPriority(event.target.value);
+    setErrorMessage((prev) => {
+      return { ...prev, priority: "" };
+    });
   };
 
   const handleFilterChange2 = (event) => {
     setStatus(event.target.value);
+    setErrorMessage((prev) => {
+      return { ...prev, status: "" };
+    });
   };
 
   return (
@@ -80,8 +109,16 @@ export default function BugReportingForm(props) {
             value={title}
             className="title"
             placeholder="Title"
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              setErrorMessage((prev) => {
+                return { ...prev, title: "" };
+              });
+            }}
           />
+          <p className="error">
+            {errorMessage.title ? errorMessage.title : ""}
+          </p>
         </label>
 
         <label htmlFor="project">
@@ -91,8 +128,16 @@ export default function BugReportingForm(props) {
             value={project}
             className="project"
             placeholder="Project"
-            onChange={(e) => setProject(e.target.value)}
+            onChange={(e) => {
+              setProject(e.target.value);
+              setErrorMessage((prev) => {
+                return { ...prev, project: "" };
+              });
+            }}
           />
+          <p className="error">
+            {errorMessage.project ? errorMessage.project : ""}
+          </p>
         </label>
         <label htmlFor="des">
           <div className="title-p">Project Description: </div>
@@ -104,44 +149,54 @@ export default function BugReportingForm(props) {
             cols="50"
             rows="5"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => {
+              setDescription(e.target.value);
+              setErrorMessage((prev) => {
+                return { ...prev, description: "" };
+              });
+            }}
           />
+          <p className="error">
+            {errorMessage.description ? errorMessage.description : ""}
+          </p>
         </label>
         <div className="status-dropdown">
-          <Dropdown
-            value={status}
-            title="Status"
-            onChange={handleFilterChange2}
-            option1="Open"
-            option2="In Progress"
-            option3="Failed"
-            opt1="Open"
-            opt2="In Progress"
-            opt3="Failed"
-          />
-          {/* <label htmlFor="status">
-            <div className="title-p"> Status: </div>
-            <input
-              type="text"
+          <div className="dropdown">
+            <Dropdown
               value={status}
-              className="status"
-              placeholder="Status"
-              onChange={(e) => setStatus(e.target.value)}
+              title="Status"
+              onChange={handleFilterChange2}
+              option1="Open"
+              option2="In Progress"
+              option3="Failed"
+              opt1="Open"
+              opt2="In Progress"
+              opt3="Failed"
             />
-          </label> */}
 
-          <Dropdown
-            value={priority}
-            title="Priority"
-            onChange={handleFilterChange1}
-            option1="High"
-            option2="Medium"
-            option3="Low"
-            opt1="High"
-            opt2="Medium"
-            opt3="Low"
-          />
+            <Dropdown
+              value={priority}
+              title="Priority"
+              onChange={handleFilterChange1}
+              option1="High"
+              option2="Medium"
+              option3="Low"
+              opt1="High"
+              opt2="Medium"
+              opt3="Low"
+            />
+          </div>
+
+          <div className="errormsg">
+            <p className="error">
+              {errorMessage.status ? errorMessage.status : ""}
+            </p>
+            <p className="error">
+              {errorMessage.priority ? errorMessage.priority : ""}
+            </p>
+          </div>
         </div>
+
         <div className="bw">
           <Button
             onClick={addOrUpdateBug}

@@ -26,7 +26,7 @@ function BugList() {
     toggleModal();
   };
 
-  const updateBug = useCallback((updatedBug) => {
+  const updateBug = (updatedBug) => {
     const updatedBugs = bugData.map((bug) =>
       bug.id === updatedBug.id ? updatedBug : bug
     );
@@ -34,7 +34,7 @@ function BugList() {
     setBugData(updatedBugs);
     setEditBug(null);
     toggleModal();
-  }, []);
+  };
 
   useEffect(() => {
     localStorage.setItem("bug", JSON.stringify(bugData));

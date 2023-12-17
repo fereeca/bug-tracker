@@ -38,7 +38,7 @@ td .action {
 }
 
 .high-cell .priority-div {
-  background-color: #f06565;
+  background-color: rgb(240, 101, 101);
   padding: 10px;
   border-radius: 7px;
   color: rgb(255, 255, 255);
@@ -51,7 +51,7 @@ td .action {
 }
 
 .low-cell .priority-div {
-  background-color: #64e26e;
+  background-color: rgb(100, 226, 110);
   padding: 10px;
   border-radius: 7px;
   color: rgb(255, 255, 255);
@@ -63,7 +63,7 @@ td .action {
 }
 
 .medium-cell .priority-div {
-  background-color: #fda552;
+  background-color: rgb(253, 165, 82);
   padding: 10px;
   border-radius: 7px;
   color: rgb(255, 255, 255);

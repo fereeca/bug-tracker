@@ -1,0 +1,76 @@
+.detail-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  .details-title {
+    padding-bottom: 5px;
+  }
+
+  .bug-details-container {
+    .title-no {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+
+      .topics {
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .totalBugs {
+        color: rgb(159, 223, 159);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+
+      .activeBugs {
+        color: rgb(252, 225, 167);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+
+      .inProgress {
+        color: rgb(245, 175, 152);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+
+      .failed {
+        color: rgb(225, 77, 77);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+
+      .complete {
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+
+      .highbugs {
+        color: rgb(240, 101, 101);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+      .mediumbugs {
+        color: rgb(253, 165, 82);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+      .lowbugs {
+        color: rgb(100, 226, 110);
+        font-size: 20px;
+        font-weight: 900;
+        align-items: center;
+      }
+    }
+  }
+}

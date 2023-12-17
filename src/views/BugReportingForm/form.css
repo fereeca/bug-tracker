@@ -32,6 +32,10 @@ form {
   background: linear-gradient(rgb(253, 249, 243), #fffffffb);
   border-radius: 10px;
 
+  .error {
+    color: red;
+  }
+
   .title-p {
     font-size: 20px;
     color: rgb(40, 117, 88);
@@ -63,7 +67,6 @@ form {
     border-bottom: 1px solid #7e7b7b;
     outline: none;
     background: transparent;
-    color: white;
   }
 
   .des {
@@ -80,22 +83,22 @@ form {
     background: transparent;
   }
 
-  /* .add {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-  /* .add button {
-    padding: 20px;
-    font-size: 30px;
-  } */
-
   .status-dropdown {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
     padding-bottom: 10px;
+    flex-direction: column;
+
+    .dropdown {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .errormsg {
+      display: flex;
+      justify-content: space-between;
+    }
 
     .status {
       font-size: 20px;
@@ -103,8 +106,6 @@ form {
       padding: 10px;
       outline: 0;
       border-radius: 7px;
-      /* align-items: center;
-      display: flex; */
     }
   }
 
