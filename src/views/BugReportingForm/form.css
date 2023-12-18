@@ -12,7 +12,7 @@
   .logo {
     display: flex;
     gap: 15px;
-    padding-left: 30px;
+    padding-left: 15px;
   }
 }
 .fa-bug {
@@ -30,7 +30,6 @@ form {
   margin: 0 auto;
   padding: 40px;
   background: linear-gradient(rgb(253, 249, 243), #fffffffb);
-  border-radius: 10px;
 
   .error {
     color: red;
@@ -38,7 +37,7 @@ form {
 
   .title-p {
     font-size: 20px;
-    color: rgb(40, 117, 88);
+    color: rgb(12, 116, 76);
   }
 
   .title {

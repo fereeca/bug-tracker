@@ -21,11 +21,18 @@ function StatsCard(props) {
 
   return (
     <div className="stats-card">
-      <div className="bug-card green">
+      <div className="bug-card blue">
         <h2 className="card-title">Total Bugs</h2>
         <h1 className="num">{totalBugs}</h1>
         <p className="icon">
           <i className="fas fa-spider"></i>
+        </p>
+      </div>
+      <div className="bug-card green ">
+        <h2 className="card-title">Completed</h2>
+        <h1 className="num">100</h1>
+        <p className="icon">
+          <i className="fas fa-check"></i>
         </p>
       </div>
       <div className="bug-card yellow">

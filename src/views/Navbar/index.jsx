@@ -2,7 +2,6 @@ import React from "react";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
 import Button from "../Button";
-import navImg from "./assets/manche.png";
 
 function Navbar() {
   return (
@@ -29,8 +28,8 @@ function Navbar() {
         </div>
 
         <div className="login-info">
-          <img src={navImg} alt="people-icon" width="40px" height="40px" />
-          <div className="ppl-name">Fereeca</div>
+          <i className="fas fa-user"></i>
+          <div className="ppl-name">Fereeca Tuladhar</div>
         </div>
       </div>
     </>

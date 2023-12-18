@@ -1,11 +1,14 @@
 .detail-container {
   background-color: white;
   padding: 30px;
+
   border-radius: 12px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   .details-title {
     padding-bottom: 5px;
+    font-size: 20px;
+    padding-left: 5px;
   }
 
   .bug-details-container {
@@ -15,7 +18,7 @@
       padding: 5px;
 
       .topics {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
       }
 

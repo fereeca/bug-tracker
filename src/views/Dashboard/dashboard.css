@@ -1,64 +1,77 @@
 .dashboard-container {
   display: flex;
   background-color: rgb(253, 249, 243);
+  width: 100%;
+  margin: 0 auto;
 
   .nav-dash {
-    width: 16.5%;
+    width: 16.53%;
   }
-  .dashboard-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 
+  .stats-bar-detail-pie {
+    display: flex;
+
+    width: 82%;
+    margin: 0 auto;
     padding: 20px;
 
-    .title {
-      margin-bottom: 20px;
-      padding-left: 40px;
-      margin-top: 10px;
-    }
-
-    .stats-container {
+    .stats-bar-container {
       display: flex;
-      padding-top: 10px;
-      justify-content: center;
-      margin-bottom: 60px;
-      margin-top: 10px;
+      flex-direction: column;
+      width: 70%;
+      gap: 1rem;
+      margin-right: 2%;
+
+      /* width: 69%; */
+
+      .title {
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .stats-container {
+        margin-bottom: 10px;
+      }
+
+      .bar-chart {
+        height: 500px;
+        width: 1030px;
+        display: flex;
+        /* align-items: center; */
+
+        .bar-component {
+          padding-top: 80px;
+          padding: 120px;
+          width: 1050px;
+          height: 540px;
+          border-radius: 12px;
+          background-color: white;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+      }
     }
-  }
-
-  .details-pie-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 20px;
-    padding-left: 70px;
-
-    .pie-chart {
-      width: 400px;
-      padding: 20px;
-      height: 100%;
-      border-radius: 24px;
-      background-color: white;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-  }
-
-  .charts-container {
-    display: flex;
-    padding-top: 80px;
-    padding-left: 30px;
-
-    .bar-chart {
-      height: 400px;
+    .details-pie-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 34%;
       padding: 20px;
 
-      border-radius: 24px;
+      height: 80%;
 
-      background-color: white;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      /* width: 80%; */
-      width: 1010px;
+      .pie-chart {
+        padding: 20px;
+        /* padding-left: 10px; */
+        /* width: 230px; */
+        height: 400px;
+        border-radius: 12px;
+        background-color: white;
+        padding-bottom: 20px;
+        /* display: flex;
+        align-items: center; */
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
     }
   }
 }
