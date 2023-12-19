@@ -5,13 +5,13 @@
   margin: 0 auto;
 
   .nav-dash {
-    width: 16.53%;
+    width: 20%;
   }
 
   .stats-bar-detail-pie {
     display: flex;
 
-    width: 82%;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
 
@@ -36,14 +36,14 @@
 
       .bar-chart {
         height: 500px;
-        width: 1030px;
+        /* width: 1030px; */
         display: flex;
         /* align-items: center; */
 
         .bar-component {
           padding-top: 80px;
           padding: 120px;
-          width: 1050px;
+          /* width: 1050px; */
           height: 540px;
           border-radius: 12px;
           background-color: white;

@@ -13,14 +13,14 @@ function Navbar() {
         </div>
         <div className="nav-btns">
           <NavLink to="/" style={{ textDecoration: "none" }}>
-            {/* <Button title="Home" className="b" /> */}
+          
             <div className="b">
               <i className="fas fa-home"></i>&nbsp; &nbsp;Home
             </div>
           </NavLink>
 
           <NavLink to="/dashboard" style={{ textDecoration: "none" }}>
-            {/* <Button title="Dashboard" className="b" /> */}
+           
             <div className="b">
               <i className="fas fa-chart-line"></i>&nbsp; &nbsp;Dashboard
             </div>

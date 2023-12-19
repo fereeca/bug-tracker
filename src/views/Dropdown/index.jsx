@@ -18,7 +18,6 @@ function Dropdown(props) {
 
   return (
     <div className="priority">
-      {/* <label htmlFor="filter">{dropdown_title}</label>  */}
       <select
         name="filter"
         value={value}
