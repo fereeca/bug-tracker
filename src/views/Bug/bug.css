@@ -38,11 +38,11 @@ td .action {
 }
 
 .high-cell .priority-div {
-  background-color: rgb(240, 101, 101);
-  padding: 10px;
+  background-color: rgb(253, 217, 225);
+  padding: 5px;
   border-radius: 7px;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  color: rgb(237, 104, 128);
+  /* box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75); */
 
   text-align: center;
 
@@ -51,11 +51,11 @@ td .action {
 }
 
 .low-cell .priority-div {
-  background-color: rgb(100, 226, 110);
-  padding: 10px;
+  background-color: rgb(232, 249, 238);
+  padding: 5px;
   border-radius: 7px;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 15px 0 rgba(24, 173, 44, 0.75);
+  color: rgb(13, 192, 85);
+
   text-align: center;
 
   font-weight: 600;
@@ -63,11 +63,11 @@ td .action {
 }
 
 .medium-cell .priority-div {
-  background-color: rgb(253, 165, 82);
-  padding: 10px;
+  background-color: rgb(247, 225, 199);
+  padding: 5px;
   border-radius: 7px;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 15px 0 rgba(247, 115, 55, 0.75);
+  color: rgb(240, 159, 66);
+
   text-align: center;
 
   font-weight: 600;
