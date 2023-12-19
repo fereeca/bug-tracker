@@ -147,7 +147,7 @@ export default function BugReportingForm(props) {
             placeholder="Description"
             id="des"
             cols="50"
-            rows="5"
+            rows="2"
             value={description}
             onChange={(e) => {
               setDescription(e.target.value);

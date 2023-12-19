@@ -108,7 +108,7 @@ function BugList() {
 
         <div className="bug">
           <div className="container">
-            <h1 className="title-bug">Bug List</h1>
+            <h1 className="title-bug">BugList</h1>
             <Search placeholder="search Bugs" onChange={handleSearch} />
 
             <div className="filter-btn">

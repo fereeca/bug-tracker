@@ -1,6 +1,6 @@
 .form-name {
-  width: 600px;
-  margin: 0 auto;
+  /* width: 600px;
+  margin: 0 auto; */
 
   /* padding-left: 30px; */
   font-size: 12px;
@@ -25,10 +25,11 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 600px;
+  gap: 1rem;
+  /* width: 500px;
+  height: 690px; */
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px;
   background: linear-gradient(rgb(253, 249, 243), #fffffffb);
 
   .error {
